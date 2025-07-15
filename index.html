@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLingua - Aprende Programación e Idiomas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4361ee',
+                        secondary: '#3f37c9',
+                        accent: '#4895ef',
+                        dark: '#1e1e2c',
+                        light: '#f8f9fa'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .blog-card:hover .blog-title {
+            color: #4361ee;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .feature-card:hover {
+            background-color: #f0f4ff;
+        }
+        
+        .nav-link:hover {
+            color: #4361ee;
+        }
+        
+        .active {
+            color: #4361ee;
+            font-weight: 600;
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(#ffffff 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xl">CL</div>
+                    <span class="ml-3 font-bold text-xl text-dark">CodeLingua</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-gray-600 hover:text-primary transition">Inicio</a>
+                    <a href="#courses" class="nav-link text-gray-600 hover:text-primary transition">Cursos</a>
+                    <a href="#blog" class="nav-link text-gray-600 hover:text-primary transition">Blog</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-primary transition">Precios</a>
+                    <a href="#features" class="nav-link text-gray-600 hover:text-primary transition">Características</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block text-gray-600 hover:text-primary transition">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                        Iniciar Sesión
+                    </button>
+                    <button class="md:hidden text-gray-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-32 pb-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6">
+                        Domina la <span class="text-primary">Programación</span> y los <span class="text-primary">Idiomas</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Aprende con los mejores cursos online. Más de 500 cursos de programación e idiomas con profesores expertos. Únete a nuestra comunidad de más de 100,000 estudiantes.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-primary text-white px-8 py-4 rounded-lg hover:bg-secondary transition font-medium">
+                            Comenzar Ahora
+                        </button>
+                        <button class="border border-primary text-primary px-8 py-4 rounded-lg hover:bg-blue-50 transition font-medium">
+                            Ver Cursos
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-80 h-80 gradient-bg rounded-full flex items-center justify-center">
+                            <div class="bg-white w-64 h-64 rounded-full flex items-center justify-center">
+                                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Estudiante" class="w-56 h-56 rounded-full object-cover">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white shadow-lg rounded-lg p-4 w-48">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-chart-line text-green-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">+85%</p>
+                                    <p class="text-sm text-gray-500">Estudiantes satisfechos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -right-6 bg-white shadow-lg rounded-lg p-4 w-48">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-users text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">100,000+</p>
+                                    <p class="text-sm text-gray-500">Estudiantes activos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos Destacados -->
+    <section id="courses" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Cursos Destacados</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Descubre nuestros cursos más populares en programación e idiomas</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Curso 1 -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-indigo-600 relative">
+                        <div class="absolute top-4 right-4 bg-white text-primary text-sm font-bold px-3 py-1 rounded-full">Nuevo</div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">JavaScript Moderno ES2023</h3>
+                                <div class="flex items-center text-yellow-400 mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-2">4.8 (1,245)</span>
+                                </div>
+                            </div>
+                            <span class="text-2xl font-bold text-primary">$29</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Domina JavaScript moderno con las últimas características de ES2023. Aprende desde cero hasta avanzado.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-500">
+                                <i class="far fa-clock mr-2"></i>
+                                <span>32 horas</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition text-sm">
+                                Comprar Curso
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curso 2 -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-teal-600 relative">
+                        <div class="absolute top-4 right-4 bg-white text-primary text-sm font-bold px-3 py-1 rounded-full">Popular</div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">Inglés</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">Inglés Profesional Completo</h3>
+                                <div class="flex items-center text-yellow-400 mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-500 ml-2">4.9 (2,147)</span>
+                                </div>
+                            </div>
+                            <span class="text-2xl font-bold text-primary">$39</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Curso completo para dominar el inglés en contextos profesionales. Desde entrevistas hasta presentaciones.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-500">
+                                <i class="far fa-clock mr-2"></i>
+                                <span>48 horas</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition text-sm">
+                                Comprar Curso
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curso 3 -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-700 relative">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">Python para Ciencia de Datos</h3>
+                                <div class="flex items-center text-yellow-400 mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-2">4.6 (987)</span>
+                                </div>
+                            </div>
+                            <span class="text-2xl font-bold text-primary">$49</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Aprende a usar Python para análisis de datos, visualización y machine learning con proyectos reales.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-500">
+                                <i class="far fa-clock mr-2"></i>
+                                <span>56 horas</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition text-sm">
+                                Comprar Curso
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border border-primary text-primary px-8 py-3 rounded-lg hover:bg-blue-50 transition font-medium">
+                    Ver Todos los Cursos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Blog y Artículos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Aprende con nuestros artículos sobre programación, idiomas y desarrollo profesional</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artículo 1 -->
+                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-56 bg-gray-200 border-2 border-dashed rounded-xl w-full"></div>
+                    <div class="p-6">
+                        <div class="flex mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full mr-3">Programación</span>
+                            <span class="text-gray-500 text-sm">15 Julio, 2023</span>
+                        </div>
+                        <h3 class="blog-title text-xl font-bold text-dark mb-3 transition duration-300">Las 10 habilidades de JavaScript más demandadas en 2023</h3>
+                        <p class="text-gray-600 mb-4">Descubre qué habilidades en JavaScript son las más buscadas por las empresas este año y cómo puedes desarrollarlas.</p>
+                        <a href="#" class="text-primary font-semibold flex items-center">
+                            Leer más
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Artículo 2 -->
+                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-56 bg-gray-200 border-2 border-dashed rounded-xl w-full"></div>
+                    <div class="p-6">
+                        <div class="flex mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full mr-3">Idiomas</span>
+                            <span class="text-gray-500 text-sm">10 Julio, 2023</span>
+                        </div>
+                        <h3 class="blog-title text-xl font-bold text-dark mb-3 transition duration-300">Cómo mejorar tu pronunciación en inglés en 30 días</h3>
+                        <p class="text-gray-600 mb-4">Técnicas comprobadas y ejercicios prácticos para mejorar significativamente tu pronunciación en inglés en solo un mes.</p>
+                        <a href="#" class="text-primary font-semibold flex items-center">
+                            Leer más
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Artículo 3 -->
+                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-56 bg-gray-200 border-2 border-dashed rounded-xl w-full"></div>
+                    <div class="p-6">
+                        <div class="flex mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full mr-3">Carrera</span>
+                            <span class="text-gray-500 text-sm">5 Julio, 2023</span>
+                        </div>
+                        <h3 class="blog-title text-xl font-bold text-dark mb-3 transition duration-300">Guía para conseguir tu primer trabajo como desarrollador frontend</h3>
+                        <p class="text-gray-600 mb-4">Pasos prácticos, consejos de reclutadores y un plan de acción para conseguir tu primer empleo en desarrollo web.</p>
+                        <a href="#" class="text-primary font-semibold flex items-center">
+                            Leer más
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border border-primary text-primary px-8 py-3 rounded-lg hover:bg-blue-50 transition font-medium">
+                    Ver Todos los Artículos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes de Suscripción -->
+    <section id="pricing" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Planes Premium</h2>
+                <p class="text-blue-100 max-w-2xl mx-auto">Accede a todos nuestros cursos y contenido exclusivo con nuestros planes de suscripción</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plan Básico -->
+                <div class="pricing-card bg-white rounded-xl shadow-xl overflow-hidden transition duration-300">
+                    <div class="bg-gray-100 py-6 px-6 text-center">
+                        <h3 class="text-xl font-bold text-dark">Básico</h3>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold text-primary">$15</span>
+                            <span class="text-gray-500">/mes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Acceso a 50 cursos básicos</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Certificados de finalización</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-times-circle text-gray-300 mr-2"></i>
+                                <span class="opacity-50">Acceso a cursos premium</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-times-circle text-gray-300 mr-2"></i>
+                                <span class="opacity-50">Proyectos prácticos</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-times-circle text-gray-300 mr-2"></i>
+                                <span class="opacity-50">Soporte prioritario</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border border-primary text-primary px-4 py-3 rounded-lg hover:bg-blue-50 transition font-medium">
+                            Comenzar Prueba Gratis
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Plan Profesional -->
+                <div class="pricing-card bg-white rounded-xl shadow-xl overflow-hidden transition duration-300 transform relative">
+                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 rounded-bl-lg">
+                        Popular
+                    </div>
+                    <div class="bg-blue-50 py-6 px-6 text-center">
+                        <h3 class="text-xl font-bold text-dark">Profesional</h3>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold text-primary">$29</span>
+                            <span class="text-gray-500">/mes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Acceso a todos los cursos</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Certificados de finalización</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Proyectos prácticos</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Desafíos semanales</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-times-circle text-gray-300 mr-2"></i>
+                                <span class="opacity-50">Soporte prioritario</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-primary text-white px-4 py-3 rounded-lg hover:bg-secondary transition font-medium">
+                            Comenzar Prueba Gratis
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Plan Empresa -->
+                <div class="pricing-card bg-white rounded-xl shadow-xl overflow-hidden transition duration-300">
+                    <div class="bg-gray-100 py-6 px-6 text-center">
+                        <h3 class="text-xl font-bold text-dark">Empresa</h3>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold text-primary">$49</span>
+                            <span class="text-gray-500">/mes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Acceso a todos los cursos</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Certificados de finalización</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Proyectos prácticos avanzados</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Mentorías personalizadas</span>
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Soporte prioritario 24/7</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border border-primary text-primary px-4 py-3 rounded-lg hover:bg-blue-50 transition font-medium">
+                            Comenzar Prueba Gratis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Por Qué Elegirnos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Descubre lo que hace de CodeLingua la mejor plataforma para tu aprendizaje</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Característica 1 -->
+                <div class="feature-card bg-gray-50 rounded-xl p-6 transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Cursos de Alta Calidad</h3>
+                    <p class="text-gray-600">Contenido actualizado constantemente con las últimas tecnologías y metodologías de enseñanza.</p>
+                </div>
+                
+                <!-- Característica 2 -->
+                <div class="feature-card bg-gray-50 rounded-xl p-6 transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chalkboard-teacher text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Profesores Expertos</h3>
+                    <p class="text-gray-600">Instructores con experiencia real en la industria que comparten su conocimiento práctico.</p>
+                </div>
+                
+                <!-- Característica 3 -->
+                <div class="feature-card bg-gray-50 rounded-xl p-6 transition duration-300">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Aprendizaje Práctico</h3>
+                    <p class="text-gray-600">Proyectos reales y ejercicios prácticos que te preparan para el mundo laboral.</p>
+                </div>
+                
+                <!-- Característica 4 -->
+                <div class="feature-card bg-gray-50 rounded-xl p-6 transition duration-300">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Acceso Multiplataforma</h3>
+                    <p class="text-gray-600">Aprende desde cualquier dispositivo: computadora, tablet o teléfono móvil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Lo Que Dicen Nuestros Estudiantes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Descubre las experiencias de quienes ya están aprendiendo con nosotros</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full"></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-dark">María Rodríguez</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"El curso de JavaScript me cambió la vida. En solo 6 meses pude cambiar de carrera y ahora trabajo como desarrolladora frontend en una gran empresa."</p>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full"></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-dark">Carlos Méndez</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"El plan premium me ha permitido acceder a todos los cursos de programación e inglés. La calidad de los instructores es excepcional y la plataforma es muy fácil de usar."</p>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full"></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-dark">Laura Gómez</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Gracias a los cursos de inglés profesional pude mejorar mi nivel y conseguir un ascenso en mi trabajo. Los materiales son excelentes y las clases muy prácticas."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Comienza Tu Viaje de Aprendizaje Hoy</h2>
+            <p class="text-blue-100 max-w-2xl mx-auto mb-10">Únete a miles de estudiantes que ya están transformando sus carreras y vidas con nuestros cursos.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition font-medium">
+                    Ver Todos los Cursos
+                </button>
+                <button class="border border-white text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition font-medium">
+                    Comenzar Prueba Gratis
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo y descripción -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xl">CL</div>
+                        <span class="ml-3 font-bold text-xl text-white">CodeLingua</span>
+                    </div>
+                    <p class="mb-6">La plataforma líder para aprender programación e idiomas con cursos prácticos y de alta calidad.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Enlaces -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#courses" class="hover:text-white transition">Cursos</a></li>
+                        <li><a href="#blog" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Precios</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sobre Nosotros</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contáctanos</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categorías -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg">Categorías</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Programación Web</a></li>
+                        <li><a href="#" class="hover:text-white transition">Inglés Profesional</a></li>
+                        <li><a href="#" class="hover:text-white transition">Ciencia de Datos</a></li>
+                        <li><a href="#" class="hover:text-white transition">Desarrollo Móvil</a></li>
+                        <li><a href="#" class="hover:text-white transition">Francés</a></li>
+                        <li><a href="#" class="hover:text-white transition">Alemán</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contacto -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg">Contacto</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>Av. Siempre Viva 123, Ciudad Digital</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-primary"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                            <span>info@codelingua.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-3 text-primary"></i>
+                            <span>www.codelingua.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p>&copy; 2023 CodeLingua. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación activa
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Scroll suave
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
