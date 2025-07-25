@@ -43,6 +43,20 @@
 
         /* IMGS */
 
+        .course-container-one {
+
+        }
+
+        .course-container-two {
+
+        }
+
+        .course-container-three {
+            background-image: url("./img/cursos-populares/data.jpg");
+            background-size: cover;
+            
+        }
+
         .b-container-one {
             background-image: url("./img/clase-1.png");
             background-size: cover;
@@ -57,3 +71,4 @@
             background-image: url("./img/clase-3.jpg");
             background-size: cover;
         }
+
