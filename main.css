@@ -39,3 +39,21 @@
             background-image: radial-gradient(#ffffff 1px, transparent 1px);
             background-size: 20px 20px;
         }
+
+
+        /* IMGS */
+
+        .b-container-one {
+            background-image: url("./img/clase-1.png");
+            background-size: cover;
+        }
+
+        .b-container-two {
+            background-image: url("./img/clase-2.jpg");
+            background-size: cover;
+        }
+
+        .b-container-three {
+            background-image: url("./img/clase-3.jpg");
+            background-size: cover;
+        }
