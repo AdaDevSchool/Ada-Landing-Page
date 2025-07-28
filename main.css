@@ -44,11 +44,13 @@
         /* IMGS */
 
         .course-container-one {
-
+            background-image: url("./img/cursos-populares/python-basico.jpg");
+            background-size: cover;
         }
 
         .course-container-two {
-
+            background-image: url("./img/cursos-populares/ingles.jpg");
+            background-size: cover;
         }
 
         .course-container-three {
@@ -69,6 +71,21 @@
 
         .b-container-three {
             background-image: url("./img/clase-3.jpg");
+            background-size: cover;
+        }
+
+        .blog-one {
+            background-image: url("./img/blog/habilidades-js.png");
+            background-size: cover;
+        }
+
+        .blog-two {
+            background-image: url("./img/blog/ingles-pronunciacion.jpg");
+            background-size: cover;
+        }
+
+        .blog-three {
+            background-image: url("./img/blog/billetera-virtual.jpg");
             background-size: cover;
         }
 
