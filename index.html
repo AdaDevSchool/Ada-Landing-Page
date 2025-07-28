@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADA Dev School - Programación, Finanzas e Idiomas</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+
     <!-- TAILWINDCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="hero-title.js" async></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="hero-title.css" type="text/css">
 
 
     <script>
@@ -71,13 +77,16 @@
     <section class="hero-pattern pt-32 pb-20">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-12 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6">
+                <div class="smd:w-1/2 mb-12 md:mb-0">
+                    <h1 class="split text-4xl md:text-5xl font-bold text-dark mb-6">
                         Domina  <span class="text-primary">Programación</span>, <span class="text-primary"> Finanzas </span> e <span class="text-primary">Idiomas</span>
+
+                        <p class="text-gray-600 text-lg mb-8">
+                        Aprende de manera rapida y eficiente
+                        </p>
                     </h1>
-                    <p class="text-gray-600 text-lg mb-8">
-                        Aprende de manera rapida y eficiente.
-                    </p>
+                    
+
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <button class="bg-primary text-white px-8 py-4 rounded-lg hover:bg-secondary transition font-medium">
                             Comenzar Ahora
@@ -125,7 +134,7 @@
     <!-- Cursos Destacados -->
     <section id="courses" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="split text-center mb-16">
                 <h2 class="text-3xl font-bold text-dark mb-4">Cursos Destacados</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Descubre nuestros cursos más populares</p>
             </div>
@@ -812,6 +821,8 @@
             </div>
         </div>
     </footer>
+
+    
 
     <script>
         // Navegación activa
