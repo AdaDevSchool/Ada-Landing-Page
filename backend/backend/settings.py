@@ -39,9 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Terceros
+    'rest_framework',
+    'corsheaders',
+    'dj_rest_auth',
+    'rest_framework.authtoken',
+    'dj_rest_auth.registration',
+    'allauth',
+    'allauth.account',
+
+    # Tu app
+    'usuarios',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # CORS
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +61,22 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Para permitir peticiones desde tu frontend
+CORS_ALLOW_ALL_ORIGINS = True  # Solo para desarrollo
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'dj_rest_auth.authentication.AllAuthJWTAuthentication',
+    ]
+}
+
+# Autenticación con JWT
+REST_USE_JWT = True
+
+# Configuración de correo para registro (puede ser falsa en dev)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 ROOT_URLCONF = 'backend.urls'
 
