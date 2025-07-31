@@ -27,3 +27,8 @@ urlpatterns = [
 ]
 
 
+# ENDPOINTS BASICOS FUNCIONANDO
+# api/auth/login  -- para logearse
+# api/auth/logout -- para deslogearse
+# api/auth/registration -- para registrarse
+# api/auth/user -- para obtener los datos del usuario registrado
