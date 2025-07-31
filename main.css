@@ -3,6 +3,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            
         }
         
         .gradient-bg {
@@ -61,6 +62,7 @@
             justify-content: center;
             align-items: flex-start;
             animation: animate 15s linear infinite, particles 4s ease-in-out infinite;
+            
         }
 
         .circle:nth-child(2){
@@ -101,7 +103,7 @@
 
                         -70px -150px 0px var(--clr),
                         -70px -150px 20px var(--clr);
-                        animation: animate 10s linear infinite;
+                        animation: animate 15s linear infinite;
         }
 
 
@@ -149,8 +151,8 @@
         }
         
         .hero-pattern {
-            background-image: radial-gradient(#ffffff 1px, transparent 1px);
-            background-size: 20px 20px;
+            /* background-image: radial-gradient(#ffffff 1px, transparent 1px);
+            background-size: 20px 20px; */
         }
 
 
