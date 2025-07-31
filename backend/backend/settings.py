@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-_zmnc*1&cnl0oy5%eos$$nz)68ytiqhguw_c#rpjclz^e#_t^c
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'usuarios.CustomUser'
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allauth.socialaccount',
 
     # Terceros
     'rest_framework',
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
 
     # Tu app
     'usuarios',
+
 ]
 
 MIDDLEWARE = [
@@ -58,8 +61,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 # Para permitir peticiones desde tu frontend
@@ -67,8 +72,13 @@ CORS_ALLOW_ALL_ORIGINS = True  # Solo para desarrollo
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'dj_rest_auth.authentication.AllAuthJWTAuthentication',
-    ]
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
 
 # Autenticación con JWT
@@ -149,3 +159,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SITE_ID = 1
