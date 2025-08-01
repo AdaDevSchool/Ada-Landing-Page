@@ -30,13 +30,9 @@ ALLOWED_HOSTS = []
 # Para usar el modelo de usuario personalizado
 AUTH_USER_MODEL = 'usuarios.CustomUser'
 
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'optional'  # Se puede cambiar a 'mandatory' más adelante
-ACCOUNT_UNIQUE_EMAIL = True
 
+
+# ...
 
 # Application definition
 
@@ -63,6 +59,10 @@ INSTALLED_APPS = [
 
 ]
 
+
+
+
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # CORS
     'django.middleware.security.SecurityMiddleware',
@@ -75,6 +75,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
 ]
+
+
+
+
+
+
+
+
+
+
 
 # Para permitir peticiones desde tu frontend
 CORS_ALLOW_ALL_ORIGINS = True  # Solo para desarrollo
@@ -95,8 +105,7 @@ REST_FRAMEWORK = {
 # Autenticación con JWT
 REST_USE_JWT = True
 
-# Configuración de correo para registro (puede ser falsa en dev)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 
 ROOT_URLCONF = 'backend.urls'
@@ -168,15 +177,37 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+# Configuración para django-allauth
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_VERIFICATION = 'none' # Para evitar el envío de correos de verificación
+
+
+# Configuración de dj-rest-auth
+# ¡No se necesita un serializer personalizado!
+# dj-rest-auth usará el flujo de registro por email de allauth.
+REST_AUTH = {
+    'REGISTER_SERIALIZER': 'usuarios.serializers.CustomRegisterSerializer',
+    'USER_DETAILS_SERIALIZER': 'usuarios.serializers.CustomUserSerializer',
+    # Puedes añadir otras configuraciones aquí si las necesitas
+    # 'USE_JWT': True,
+}
+
+
+
+
 SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+# Configuración de correo para registro (puede ser falsa en dev)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Configs extra
-""" ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = 'optional' """
 
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'usuarios.serializers.CustomRegisterSerializer',
-}
+
+
 
