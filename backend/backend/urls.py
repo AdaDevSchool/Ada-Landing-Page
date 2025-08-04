@@ -16,13 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from blog.views import PostViewSet
+
+router = DefaultRouter()
+router.register(r'posts', PostViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Autenticacion (login, logaut, registro, etc.)
     path('api/auth/', include('dj_rest_auth.urls')), # login, logout, password reset
     path('api/auth/registration/', include('dj_rest_auth.registration.urls')),# registro
-    
+    path('api/', include(router.urls)),
     
 ]
 
