@@ -1,13 +1,27 @@
-from django.shortcuts import render
+# blog/views.py
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAdminUser, AllowAny
 from .models import Post
 from .serializers import PostSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def get_permissions(self):
+        """
+        Asigna los permisos basados en la acción solicitada.
+        """
+        if self.action in ['list', 'retrieve']:
+            # Permite que cualquier usuario (incluso los no autenticados)
+            # puedan ver la lista de posts y los detalles de un post.
+            permission_classes = [AllowAny]
+        else:
+            # Restringe las acciones de creación, actualización y borrado
+            # únicamente a los usuarios administradores.
+            permission_classes = [IsAdminUser]
+        
+        return [permission() for permission in permission_classes]
 
     def perform_create(self, serializer):
         # Esta función asigna el usuario autenticado como autor del post
