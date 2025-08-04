@@ -9,11 +9,15 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Configuracion de archivos multimedia (Imagenes, Videos, etc.)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,9 +34,6 @@ ALLOWED_HOSTS = []
 # Para usar el modelo de usuario personalizado
 AUTH_USER_MODEL = 'usuarios.CustomUser'
 
-
-
-# ...
 
 # Application definition
 
@@ -60,10 +61,6 @@ INSTALLED_APPS = [
 
 ]
 
-
-
-
-
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # CORS
     'django.middleware.security.SecurityMiddleware',
@@ -76,16 +73,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
 ]
-
-
-
-
-
-
-
-
-
-
 
 # Para permitir peticiones desde tu frontend
 CORS_ALLOW_ALL_ORIGINS = True  # Solo para desarrollo
@@ -106,9 +93,6 @@ REST_FRAMEWORK = {
 # Autenticación con JWT
 REST_USE_JWT = True
 
-
-
-
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
@@ -127,7 +111,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -167,7 +150,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
@@ -177,8 +159,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 
 # Configuración para django-allauth
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -198,9 +178,6 @@ REST_AUTH = {
     # Puedes añadir otras configuraciones aquí si las necesitas
     # 'USE_JWT': True,
 }
-
-
-
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'

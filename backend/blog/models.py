@@ -14,6 +14,8 @@ class Post(models.Model):
         verbose_name="Autor"
     )
 
+    image = models.ImageField(upload_to='blog_images/', blank=True, null=True, verbose_name='Imagen')
+
     class Meta:
         verbose_name = "Entrada de Blog"
         verbose_name_plural = "Entradas de Blog"

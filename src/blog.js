@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     const postElement = document.createElement('div');
                     postElement.classList.add('blog-post');
 
+                    /* Manejo de Imagenes */
+                    if (post.image) {
+                        const postImage = document.createElement('img');
+                        postImage.src   = post.image;
+                        postImage.alt   = post.title;
+                        postImage.style.maxWidth = '100%';
+                        postElement.appendChild(postImage)
+                    }
+
                     const title = document.createElement('h2');
                     title.textContent = post.title;
 
