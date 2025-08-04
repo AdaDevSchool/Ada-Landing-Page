@@ -1,0 +1,206 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .blog-card:hover .blog-title {
+            color: #4361ee;
+        }
+
+
+        /* ANIMATION STYLE */
+
+        .ball {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            box-shadow: inset 0 25px 70px rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ball::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            width: 100%;
+            height: 100px;
+            border-radius: 50px;
+            /* background: radial-gradient(#0003, #0003, transparent, transparent); */
+            z-index: -1;
+        }
+
+        .ball::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+        }
+
+        .ball:hover::after {
+            opacity: 1;
+        }
+
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            animation: animate 15s linear infinite, particles 4s ease-in-out infinite;
+            
+        }
+
+        .circle:nth-child(2){
+            width: 100px;
+            height: 100px;
+            animation: animate 5s linear infinite, particles 6s ease-in-out infinite;
+        }
+
+        .circle:nth-child(3){
+            width: 50px;
+            height: 50px;
+            animation: animate 10s linear infinite, particles 7s ease-in-out infinite;
+        }
+
+        .circle:nth-child(4){
+            width: 80px;
+            height: 80px;
+            animation: animate 7s linear infinite, particles 10s ease-in-out infinite;
+        }
+
+        .circle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            background: var(--clr);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--clr),
+                        0 0 60px var(--clr),
+                
+                        40px -70px 0px var(--clr),
+                        40px -70px 20px var(--clr),
+
+                        70px -70px 0px var(--clr),
+                        70px -70px 20px var(--clr),
+
+                        -70px -150px 0px var(--clr),
+                        -70px -150px 20px var(--clr);
+                        animation: animate 15s linear infinite;
+        }
+
+
+        @keyframes animate{
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes particles {
+            0%, 100% {
+                scale: 0.5;
+            }
+
+            50% {
+                scale: 1.5;
+            }
+        }
+
+        .img-logo{
+            width: 50px;
+            height: 50px;
+            border-radius: 20px;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .feature-card:hover {
+            background-color: #f0f4ff;
+        }
+        
+        .nav-link:hover {
+            color: #4361ee;
+        }
+        
+        .active {
+            color: #4361ee;
+            font-weight: 600;
+        }
+        
+        .hero-pattern {
+            /* background-image: radial-gradient(#ffffff 1px, transparent 1px);
+            background-size: 20px 20px; */
+        }
+
+
+        /* IMGS */
+
+        .course-container-one {
+            background-image: url("./img/cursos-populares/python-basico.jpg");
+            background-size: cover;
+        }
+
+        .course-container-two {
+            background-image: url("./img/cursos-populares/ingles.jpg");
+            background-size: cover;
+        }
+
+        .course-container-three {
+            background-image: url("./img/cursos-populares/data.jpg");
+            background-size: cover;
+            
+        }
+
+        .b-container-one {
+            background-image: url("./img/clase-1.png");
+            background-size: cover;
+        }
+
+        .b-container-two {
+            background-image: url("./img/clase-2.jpg");
+            background-size: cover;
+        }
+
+        .b-container-three {
+            background-image: url("./img/clase-3.jpg");
+            background-size: cover;
+        }
+
+        .blog-one {
+            background-image: url("./img/blog/habilidades-js.png");
+            background-size: cover;
+        }
+
+        .blog-two {
+            background-image: url("./img/blog/ingles-pronunciacion.jpg");
+            background-size: cover;
+        }
+
+        .blog-three {
+            background-image: url("./img/blog/billetera-virtual.jpg");
+            background-size: cover;
+        }
+
