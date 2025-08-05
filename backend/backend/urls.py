@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from blog.views import PostViewSet
+from django.views.generic import TemplateView
 
 router = DefaultRouter()
 router.register(r'posts', PostViewSet)
@@ -30,6 +31,8 @@ urlpatterns = [
     path('api/auth/', include('dj_rest_auth.urls')), # login, logout, password reset
     path('api/auth/registration/', include('dj_rest_auth.registration.urls')),# registro
     path('api/', include(router.urls)),
+    path('blog/', TemplateView.as_view(template_name='frontend/blog.html')),
+    path('', TemplateView.as_view(template_name='frontend/index.html'), name='home'),
 ]
 
 
