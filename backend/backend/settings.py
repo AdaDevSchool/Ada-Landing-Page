@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     # Tu app
     'usuarios',
     'blog',
-    'corsheaders',
+    
 
 ]
 
