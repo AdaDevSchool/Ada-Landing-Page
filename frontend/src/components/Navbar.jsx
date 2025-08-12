@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React from 'react';
-import logo from '../assets/logo-w.jpg'; // Asegúrate de mover la imagen a la carpeta src/assets
+import logo from '../assets/images/logo/logo-w.jpg'; // Asegúrate de mover la imagen a la carpeta src/assets
 
 const Navbar = () => {
     return (
