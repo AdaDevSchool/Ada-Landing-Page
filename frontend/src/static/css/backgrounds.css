@@ -1,48 +1,48 @@
 /* IMGS */
 
         .course-container-one {
-            background-image: url("../images/cursos-populares/python-basico.jpg");
+            background-image: url("../../assets/images/cursos-populares/python-basico.jpg");
             background-size: cover;
         }
 
         .course-container-two {
-            background-image: url("../images/cursos-populares/ingles.jpg");
+            background-image: url("../../assets/images/cursos-populares/ingles.jpg");
             background-size: cover;
         }
 
         .course-container-three {
-            background-image: url("../images/cursos-populares/data.jpg");
+            background-image: url("../../assets/images/cursos-populares/data.jpg");
             background-size: cover;
             
         }
 
         .b-container-one {
-            background-image: url("../images/clase-1.png");
+            background-image: url("../../assets/images/clase-1.png");
             background-size: cover;
         }
 
         .b-container-two {
-            background-image: url("../images/clase-2.jpg");
+            background-image: url("../../assets/images/clase-2.jpg");
             background-size: cover;
         }
 
         .b-container-three {
-            background-image: url("../images/clase-3.jpg");
+            background-image: url("../../assets/images/clase-3.jpg");
             background-size: cover;
         }
 
         .blog-one {
-            background-image: url("../images/blog/habilidades-js.png");
+            background-image: url("../../assets/images/blog/habilidades-js.png");
             background-size: cover;
         }
 
         .blog-two {
-            background-image: url("../images/blog/ingles-pronunciacion.jpg");
+            background-image: url("../../assets/images/blog/ingles-pronunciacion.jpg");
             background-size: cover;
         }
 
         .blog-three {
-            background-image: url("../images/blog/billetera-virtual.jpg");
+            background-image: url("../../assets/images/blog/billetera-virtual.jpg");
             background-size: cover;
         }
 
