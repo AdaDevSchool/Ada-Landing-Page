@@ -1,0 +1,37 @@
+.letter-container {
+  display: inline-block;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  line-height: 1.3;
+  overflow: hidden;
+}
+
+.letter {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(0.8em);
+  transition: 
+    opacity 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.1),
+    transform 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.letter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto adicional para letras */
+/* .letter.visible:nth-child(odd) {
+  color: #4a6fa5; 
+} */
+
+/* Efecto de rebote */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* .letter.visible:hover {
+  animation: bounce 0.5s;
+  color: #ff6b6b; 
+} */
