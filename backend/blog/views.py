@@ -1,4 +1,4 @@
-# blog/views.py
+""" # blog/views.py
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser, AllowAny
 from .models import Post
@@ -9,9 +9,6 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
 
     def get_permissions(self):
-        """
-        Asigna los permisos basados en la acción solicitada.
-        """
         if self.action in ['list', 'retrieve']:
             # Permite que cualquier usuario (incluso los no autenticados)
             # puedan ver la lista de posts y los detalles de un post.
@@ -25,4 +22,13 @@ class PostViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         # Esta función asigna el usuario autenticado como autor del post
-        serializer.save(author=self.request.user)
+        serializer.save(author=self.request.user) """
+
+
+from rest_framework import generics
+from .models import Post
+from .serializers import PostSerializer
+
+class PostListView(generics.ListAPIView):
+    queryset = Post.objects.all().order_by('-created_at')
+    serializer_class = PostSerializer
