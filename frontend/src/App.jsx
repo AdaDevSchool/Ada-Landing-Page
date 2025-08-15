@@ -13,11 +13,13 @@ import TestimonialsSection from './components/TestimonialsSection';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 // Importa tus archivos CSS aquí
-import './static/css/main.css'
+
+/* import './static/css/hero-title.css'; */ // en proceso
 import './static/css/main.css';
 import './static/css/animations.css';
 import './static/css/backgrounds.css';
 import './static/css/blog.css';
+
 
 const App = () => {
     return (

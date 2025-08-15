@@ -1,5 +1,6 @@
 // src/components/Courses.jsx
 import React from 'react';
+import ScrollLetterByLetter from './ScrollLetterByLetter';
 
 // Datos de ejemplo, que obtendrías de tu API de Django
 const coursesData = [
@@ -68,7 +69,7 @@ const CourseCard = ({ course }) => (
                     <i className="far fa-clock mr-2"></i>
                     <span>{course.hours} horas</span>
                 </div>
-                <button className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition text-sm">
+                <button className="bg-primary px-4 py-2 rounded-lg hover:bg-secondary transition text-sm">
                     Comprar Curso
                 </button>
             </div>
@@ -81,8 +82,13 @@ const Courses = () => {
         <section id="courses" className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <div className="split text-center mb-16">
-                    <h2 className="text-3xl font-bold text-dark mb-4">Cursos Destacados</h2>
+                    <ScrollLetterByLetter>
+                        Cursos Destacados
+                    </ScrollLetterByLetter>
+
                     <p className="text-gray-600 max-w-2xl mx-auto">Descubre nuestros cursos más populares</p>
+                    {/* <h2 className="text-3xl font-bold text-dark mb-4">Cursos Destacados</h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto">Descubre nuestros cursos más populares</p> */}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {coursesData.map(course => (

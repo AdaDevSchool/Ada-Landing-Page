@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import ScrollLetterByLetter from './ScrollLetterByLetter';
 
 const Blog = () => {
   // Datos de los artículos del blog
@@ -41,7 +42,10 @@ const Blog = () => {
     <section id="blog" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Blog y Artículos</h2>
+          {/* <h2 className="text-3xl font-bold text-gray-900 mb-4">Blog y Artículos</h2> */}
+          <ScrollLetterByLetter>
+            Blog y Articulos
+          </ScrollLetterByLetter>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Aprende con nuestros artículos sobre programación, idiomas y desarrollo profesional
           </p>
