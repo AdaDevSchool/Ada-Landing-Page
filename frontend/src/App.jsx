@@ -11,6 +11,7 @@ import Courses from './components/Courses';
 import Classes from './components/Classes';
 import Blog from './components/Blog';
 import BlogSection from './components/BlogSection';
+import BlogDetail from './components/BlogDetail';
 import Pricing from './components/Pricing';
 import FeaturesSection from './components/FeaturesSection';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -50,6 +51,7 @@ const App = () => {
             </Route>
                 {/* Pagina blog */}
                 <Route path="/blog" element={<BlogSection />} />
+                <Route path="/blog/:id" element={<BlogDetail />} />
             </Routes>
 
             

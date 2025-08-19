@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BlogSection = () => {
   const [articulos, setArticulos] = useState([]);
@@ -15,18 +16,16 @@ const BlogSection = () => {
       <h2 className="text-3xl font-bold mb-6">Últimos artículos</h2>
       <div className="grid md:grid-cols-2 gap-8">
         {articulos.map((articulo) => (
-          <div
+          <Link
             key={articulo.id}
-            className="rounded-2xl shadow-md bg-white overflow-hidden hover:shadow-lg transition"
+            to={`/blog/${articulo.id}`}
+            className="block rounded-2xl shadow-md bg-white overflow-hidden hover:shadow-lg transition"
           >
-            {/* Imagen del artículo */}
             <img
               src={articulo.imagen}
               alt={articulo.titulo}
               className="w-full h-56 object-cover"
             />
-
-            {/* Contenido del artículo */}
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2">{articulo.titulo}</h3>
               <p className="text-gray-600 mb-3">{articulo.descripcion}</p>
@@ -34,7 +33,7 @@ const BlogSection = () => {
                 Por {articulo.autor} • {articulo.fecha}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
