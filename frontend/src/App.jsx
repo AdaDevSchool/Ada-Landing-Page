@@ -28,16 +28,26 @@ import './static/css/blog.css';
 const App = () => {
     return (
         <Router>
-
-            
-
             <Navbar />
-
-
             <Routes>
                 {/* Pagina principal */}
-                <Route path='/' element={<Hero />}></Route>
-
+                <Route path='/' element={
+                    <>
+                        <Hero />
+                        <Courses />
+                        <Classes />
+                        <Blog />
+                        <Pricing />
+                        <FeaturesSection />
+                        <TestimonialsSection />
+                        <FinalCTA />
+                        <Footer />
+                    </>
+            }>
+                
+                
+                
+            </Route>
                 {/* Pagina blog */}
                 <Route path="/blog" element={<BlogSection />} />
             </Routes>
@@ -48,14 +58,7 @@ const App = () => {
 
 
             {/* <Hero /> */}
-            <Courses />
-            <Classes />
-            <Blog />
-            <Pricing />
-            <FeaturesSection />
-            <TestimonialsSection />
-            <FinalCTA />
-            <Footer />
+            
             
             {/* Si tienes un footer, iría aquí */}
 
