@@ -1,10 +1,10 @@
 from django.http import JsonResponse
 
-def lista_articulos(request):
+
 
     # Ejemplo de  articulos --
 
-    articulos = [
+ARTICULOS = [
         {
             "id": 1,
             "titulo": "Conceptos Ingles",
@@ -18,7 +18,8 @@ def lista_articulos(request):
             "titulo": "Introduccion a React con Django",
             "descripcion": "Exploramos cómo conectar React con Django paso a paso.",
             "autor": "Benjamin Baigorria",
-            "fecha": "2025-08-18"
+            "fecha": "2025-08-18",
+            "imagen": "https://picsum.photos/seed/articulo2/1200/600"
         },
         {
             "id": 3,
@@ -42,11 +43,22 @@ def lista_articulos(request):
             "fecha": "2025-08-18"
         },
         {
-            "id": 2,
+            "id": 6,
             "titulo": "Introduccion a React con Django",
             "descripcion": "Exploramos cómo conectar React con Django paso a paso.",
             "autor": "Benjamin Baigorria",
             "fecha": "2025-08-18"
         },
-    ]
-    return JsonResponse(articulos, safe=False)
+]
+
+
+# Lista de articulos 
+def lista_articulos(request):
+    return JsonResponse(ARTICULOS, safe=False)
+
+# Articulo individual
+def detalle_articulo(request, id):
+    articulo = next((a for a in ARTICULOS if a["id"] == id), None)
+    if articulo:
+        return JsonResponse(articulo, safe=False)
+    return JsonResponse({"error": "Artículo no encontrado"}, status=404)

@@ -21,20 +21,20 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 """ from blog.views import PostViewSet """
 from django.views.generic import TemplateView
-from blog.views import lista_articulos
+from blog.views import lista_articulos, detalle_articulo
 
 router = DefaultRouter()
 """ router.register(r'posts', PostViewSet) """
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include("blog.urls")),
     # Autenticacion (login, logaut, registro, etc.)
     path('api/auth/', include('dj_rest_auth.urls')), # login, logout, password reset
     path('api/auth/registration/', include('dj_rest_auth.registration.urls')),# registro
     path('api/', include(router.urls)),
     path('blog/', TemplateView.as_view(template_name='frontend/blog.html')),
     path('', TemplateView.as_view(template_name='frontend/index.html'), name='home'),
-    path('api/articulos/', lista_articulos)
 ]
 
 
