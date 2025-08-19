@@ -2,11 +2,15 @@
 
 // Tip: Recordar que Vite busca e  utiliza todo lo que esta dentro de la carpeta SRC , para compilar
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Componentes
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Courses from './components/Courses';
 import Classes from './components/Classes';
 import Blog from './components/Blog';
+import BlogSection from './components/BlogSection';
 import Pricing from './components/Pricing';
 import FeaturesSection from './components/FeaturesSection';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -14,7 +18,7 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 // Importa tus archivos CSS aquí
 
-/* import './static/css/hero-title.css'; */ // en proceso
+/* import './static/css/hero-title.css '; */ // en proceso
 import './static/css/main.css';
 import './static/css/animations.css';
 import './static/css/backgrounds.css';
@@ -23,7 +27,50 @@ import './static/css/blog.css';
 
 const App = () => {
     return (
-        <div>
+        <Router>
+
+            
+
+            <Navbar />
+
+
+            <Routes>
+                {/* Pagina principal */}
+                <Route path='/' element={<Hero />}></Route>
+
+                {/* Pagina blog */}
+                <Route path="/blog" element={<BlogSection />} />
+            </Routes>
+
+            
+
+
+
+
+            {/* <Hero /> */}
+            <Courses />
+            <Classes />
+            <Blog />
+            <Pricing />
+            <FeaturesSection />
+            <TestimonialsSection />
+            <FinalCTA />
+            <Footer />
+            
+            {/* Si tienes un footer, iría aquí */}
+
+        </Router>
+    );
+};
+
+export default App;
+
+
+
+/* 
+
+
+{/* <div>
             <Navbar />
             <Hero />
             <Courses />
@@ -35,9 +82,5 @@ const App = () => {
             <FinalCTA />
             <Footer />
             
-            {/* Si tienes un footer, iría aquí */}
-        </div>
-    );
-};
-
-export default App;
+            
+        </div> */

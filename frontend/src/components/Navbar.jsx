@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx
 import React from 'react';
 import logo from '../assets/images/logo/logo-w.jpg'; // Asegúrate de mover la imagen a la carpeta src/assets
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -13,10 +14,18 @@ const Navbar = () => {
                     </div>
                     
                     <div className="hidden md:flex space-x-8">
-                        <a href="#inicio" className="nav-link text-gray-600 hover:text-primary transition">Inicio</a>
+                        <Link to="/" className="nav-link text-gray-600 hover:text-primary transition">
+                            Inicio
+                        </Link>
+                        
+                        
                         <a href="#courses" className="nav-link text-gray-600 hover:text-primary transition">Cursos</a>
                         <a href="#classes" className="nav-link text-gray-600 hover:text-primary transition">Clases</a>
-                        <a href="/blog/" className="nav-link text-gray-600 hover:text-primary transition">Blog</a>
+
+                        <Link to="/blog" className='nav-link text-gray-600 hover:text-primary transition'>
+                            Blog
+                        </Link>
+                        
                         <a href="#pricing" className="nav-link text-gray-600 hover:text-primary transition">Precios</a>
                         <a href="#features" className="nav-link text-gray-600 hover:text-primary transition">Características</a>
                         <a href="#features" className="nav-link text-gray-600 hover:text-primary transition">Ejercicios</a>
