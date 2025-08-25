@@ -28,4 +28,6 @@
 6. Comienzo de configuracion y programacion de index.ts
 7. Creacion de archivo .env para almacenamiento de claves de seguridad
 8. Creacion de cuenta y configuracion de Base de datos con mongo DB
-9. 
+9. Concexion de la Base de datos con MongoDb con nuestra APP.
+10. Visitar Google CLoud para utilizar API . console.cloud.google.com -> API y Servicios -> Credenciales - Crear Credenciales y Crear clave API , copiar la clave, y ponerla en el archivo .env
+11. Segimos configurando index.ts
