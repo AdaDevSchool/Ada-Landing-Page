@@ -24,3 +24,8 @@
 "dev": "npx ts-node index.ts", // Inicito del servidor
 "seed": "npx ts-node seed-database.ts" // Inicio Base de Datos
 4. Instalacion de express mongodb cors @langchain/google-genai (Sirve para trabajar con GEMINI) @langchain/core @langchain/langgraph @lanchain/langgraph-cheackpoint-mongodb @langchain/mongodb dotenv langchain zod @types/cors @types/express ts-node
+5. mover ts-node types/express types/cores , mejor a devDependencies.
+6. Comienzo de configuracion y programacion de index.ts
+7. Creacion de archivo .env para almacenamiento de claves de seguridad
+8. Creacion de cuenta y configuracion de Base de datos con mongo DB
+9. 
