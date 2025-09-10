@@ -35,12 +35,19 @@ const Navbar = () => {
                         <button className="hidden md:block text-gray-600 hover:text-primary transition">
                             <i className="fas fa-search"></i>
                         </button>
+
+                        {/* Futuro -- Inicio de secion y registro de usuario */}
+
+                        {/*
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scala-105">
                             Iniciar Sesión
                         </button>
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scala-105">
                             Registrarse
                         </button>
+                        */}
+
+
                         <button className="md:hidden text-gray-600">
                             <i className="fas fa-bars text-xl"></i>
                         </button>
