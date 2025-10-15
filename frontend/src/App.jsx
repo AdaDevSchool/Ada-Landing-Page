@@ -35,7 +35,11 @@ const App = () => {
                 <Route path='/' element={
                     <>
                         <Hero />
-                        <Courses />
+
+                        {/* Seccion cursos pausada momentaneamente hasta crear contenido */}
+                        {/* <Courses /> */}
+
+
                         <Classes />
                         <Blog />
                         <Pricing />
@@ -46,46 +50,15 @@ const App = () => {
                     </>
             }>
                 
-                
-                
+                                
             </Route>
                 {/* Pagina blog */}
                 <Route path="/blog" element={<BlogSection />} />
                 <Route path="/blog/:id" element={<BlogDetail />} />
             </Routes>
 
-            
-
-
-
-
-            {/* <Hero /> */}
-            
-            
-            {/* Si tienes un footer, iría aquí */}
-
         </Router>
     );
 };
 
 export default App;
-
-
-
-/* 
-
-
-{/* <div>
-            <Navbar />
-            <Hero />
-            <Courses />
-            <Classes />
-            <Blog />
-            <Pricing />
-            <FeaturesSection />
-            <TestimonialsSection />
-            <FinalCTA />
-            <Footer />
-            
-            
-        </div> */

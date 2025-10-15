@@ -20,7 +20,7 @@ const Navbar = () => {
                         
                         
                         <a href="#courses" className="nav-link text-gray-600 hover:text-primary transition">Cursos</a>
-                        <a href="#classes" className="nav-link text-gray-600 hover:text-primary transition">Clases</a>
+                        <a href="#classes" className="nav-link text-gray-600 hover:text-primary transition">Clases</a> 
 
                         <Link to="/blog" className='nav-link text-gray-600 hover:text-primary transition'>
                             Blog
