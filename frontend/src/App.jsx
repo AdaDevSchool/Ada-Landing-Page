@@ -25,7 +25,6 @@ import './static/css/animations.css';
 import './static/css/backgrounds.css';
 import './static/css/blog.css';
 
-
 const App = () => {
     return (
         <Router>
